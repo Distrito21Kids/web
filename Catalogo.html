@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Distrito 21 Kids</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c239b3 30%, #667eea 70%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .catalog-container {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 35px;
+            padding: 3rem;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+        }
+
+        .catalog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .catalog-icon {
+            font-size: 7rem;
+            margin-bottom: 1rem;
+            animation: shopping 2s ease-in-out infinite;
+        }
+
+        @keyframes shopping {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(-5deg); }
+            75% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        .catalog-title {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #ff6b9d 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .catalog-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+            border-color: #667eea;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-bottom: 4px solid #ff6b9d;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-name {
+            color: #667eea;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-description {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .product-colors {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            color: #ff6b9d;
+            font-weight: 900;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .size-selector {
+            width: 100%;
+            padding: 0.9rem;
+            border: 3px solid #667eea;
+            border-radius: 15px;
+            font-size: 1rem;
+            margin: 1rem 0;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .size-selector:hover {
+            border-color: #ff6b9d;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .size-selector:focus {
+            outline: none;
+            border-color: #ff6b9d;
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c239b3 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-add-cart:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.5);
+        }
+
+        .btn-add-cart:active {
+            transform: scale(0.98);
+        }
+
+        .cart-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.6);
+            z-index: 999;
+            transition: all 0.3s ease;
+            font-size: 2.5rem;
+        }
+
+        .cart-float:hover {
+            transform: scale(1.15) rotate(15deg);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff6b9d;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.5);
+        }
+
+        .category-title {
+            font-size: 2.2rem;
+            color: #667eea;
+            text-align: center;
+            margin: 3rem 0 2rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .catalog-title {
+                font-size: 2.2rem;
+            }
+
+            .cart-float {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-fixed">
+        <div class="logo-header">
+            <h1>DISTRITO 21 KIDS</h1>
+            <p>¡Vístete de Diversión!</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="btn-nav btn-home">🏠 Menú Principal</a>
+            <a href="index.html" class="btn-nav">✨ Inicio</a>
+            <a href="tallas.html" class="btn-nav">📏 Tallas</a>
+            <a href="contacto.html" class="btn-nav">📞 Contacto</a>
+        </nav>
+    </div>
+
+    <!-- Carrito Flotante -->
+    <div class="cart-float">
+        🛒
+        <span class="cart-badge" id="cartCount">0</span>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+            <div class="catalog-container">
+                <div class="catalog-header">
+                    <div class="catalog-icon">🛍️</div>
+                    <h1 class="catalog-title">Nuestro Catálogo</h1>
+                    <p class="catalog-subtitle">
+                        Explora nuestra colección y encuentra la ropa ideal para tu pequeño. Cada prenda está diseñada con amor y atención al detalle.
+                    </p>
+                </div>
+
+                <h2 class="category-title">💕 Conjuntos de Ropa</h2>
+
+                <div class="products-grid">
+                    <!-- Producto 1 -->
+                    <div class="product-card">
+                        <img src="zPaw.png" alt="Conjunto Paw Patrol" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Conjunto Paw Patrol</h3>
+                            <p class="product-description">
+                                Conjunto infantil de dos piezas en suave algodón 100%. Incluye camiseta de manga corta negra con estampado de Paw Patrol y pantalón corto azul con cintura elástica. Fresco y ligero.
+                            </p>
+                            <p class="product-colors"><strong>Colores:</strong> Negro con azul</p>
+                            <p class="product-price">$75,000</p>
+                            <select class="size-selector">
+                                <option value="">Selecciona tu talla</option>
+                                <option value="4">Talla 4 (2 años)</option>
+                                <option value="6">Talla 6 (4 años)</option>
+                                <option value="8">Talla 8 (6 años)</option>
+                                <option value="10">Talla 10 (8 años)</option>
+                                <option value="12">Talla 12 (10 años)</option>
+                                <option value="14">Talla 14 (14 años)</option>
+                            </select>
+                            <button class="btn-add-cart" onclick="addToCart('Conjunto Paw Patrol', 75000)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="product-card">
+                        <img src="zSpider.png" alt="Conjunto Spiderman" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Conjunto Spiderman</h3>
+                            <p class="product-description">
+                                Conjunto infantil de dos piezas en suave algodón 100%. Incluye camiseta de manga corta blanca con estampado de Spiderman y pantalón corto rojo con cintura elástica. Fresco y ligero.
+                            </p>
+                            <p class="product-colors"><strong>Colores:</strong> Blanco con rojo</p>
+                            <p class="product-price">$75,000</p>
+                            <select class="size-selector">
+                                <option value="">Selecciona tu talla</option>
+                                <option value="4">Talla 4 (2 años)</option>
+                                <option value="6">Talla 6 (4 años)</option>
+                                <option value="8">Talla 8 (6 años)</option>
+                                <option value="10">Talla 10 (8 años)</option>
+                                <option value="12">Talla 12 (10 años)</option>
+                                <option value="14">Talla 14 (14 años)</option>
+                            </select>
+                            <button class="btn-add-cart" onclick="addToCart('Conjunto Spiderman', 75000)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="product-card">
+                        <img src="zMine.png" alt="Conjunto Minecraft" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Conjunto Minecraft</h3>
+                            <p class="product-description">
+                                Conjunto infantil de dos piezas en suave algodón 100%. Incluye camiseta de manga corta verde con estampado de Minecraft y pantalón corto beige con cintura elástica. Fresco y ligero.
+                            </p>
+                            <p class="product-colors"><strong>Colores:</strong> Verde con beige</p>
+                            <p class="product-price">$75,000</p>
+                            <select class="size-selector">
+                                <option value="">Selecciona tu talla</option>
+                                <option value="4">Talla 4 (2 años)</option>
+                                <option value="6">Talla 6 (4 años)</option>
+                                <option value="8">Talla 8 (6 años)</option>
+                                <option value="10">Talla 10 (8 años)</option>
+                                <option value="12">Talla 12 (10 años)</option>
+                                <option value="14">Talla 14 (14 años)</option>
+                            </select>
+                            <button class="btn-add-cart" onclick="addToCart('Conjunto Minecraft', 75000)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Producto 4 -->
+                    <div class="product-card">
+                        <img src="zOso.png" alt="Conjunto Oso" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Conjunto Oso</h3>
+                            <p class="product-description">
+                                Conjunto infantil de dos piezas en suave algodón 100%. Incluye camiseta de manga corta verde con estampado de Oso y pantalón corto beige con cintura elástica. Fresco y ligero.
+                            </p>
+                            <p class="product-colors"><strong>Colores:</strong> Verde con beige</p>
+                            <p class="product-price">$75,000</p>
+                            <select class="size-selector">
+                                <option value="">Selecciona tu talla</option>
+                                <option value="4">Talla 4 (2 años)</option>
+                                <option value="6">Talla 6 (4 años)</option>
+                                <option value="8">Talla 8 (6 años)</option>
+                                <option value="10">Talla 10 (8 años)</option>
+                                <option value="12">Talla 12 (10 años)</option>
+                                <option value="14">Talla 14 (14 años)</option>
+                            </select>
+                            <button class="btn-add-cart" onclick="addToCart('Conjunto Oso', 75000)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Producto 5 -->
+                    <div class="product-card">
+                        <img src="zPlaya.png" alt="Conjunto Playa" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Conjunto Playa</h3>
+                            <p class="product-description">
+                                Conjunto infantil de dos piezas en suave algodón 100%. Incluye camiseta de manga corta roja con estampado de Playa y pantalón corto azul con cintura elástica. Fresco y ligero.
+                            </p>
+                            <p class="product-colors"><strong>Colores:</strong> Rojo con azul</p>
+                            <p class="product-price">$75,000</p>
+                            <select class="size-selector">
+                                <option value="">Selecciona tu talla</option>
+                                <option value="4">Talla 4 (2 años)</option>
+                                <option value="6">Talla 6 (4 años)</option>
+                                <option value="8">Talla 8 (6 años)</option>
+                                <option value="10">Talla 10 (8 años)</option>
+                                <option value="12">Talla 12 (10 años)</option>
+                                <option value="14">Talla 14 (14 años)</option>
+                            </select>
+                            <button class="btn-add-cart" onclick="addToCart('Conjunto Playa', 75000)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Producto 6 -->
+                    <div class="product-card">
+                        <img src="zSonic.png" alt="Conjunto Sonic" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Conjunto Sonic</h3>
+                            <p class="product-description">
+                                Conjunto infantil de dos piezas en suave algodón 100%. Incluye camiseta de manga corta azul con estampado de Sonic y pantalón corto azul con cintura elástica. Fresco y ligero.
+                            </p>
+                            <p class="product-colors"><strong>Colores:</strong> Azul</p>
+                            <p class="product-price">$75,000</p>
+                            <select class="size-selector">
+                                <option value="">Selecciona tu talla</option>
+                                <option value="4">Talla 4 (2 años)</option>
+                                <option value="6">Talla 6 (4 años)</option>
+                                <option value="8">Talla 8 (6 años)</option>
+                                <option value="10">Talla 10 (8 años)</option>
+                                <option value="12">Talla 12 (10 años)</option>
+                                <option value="14">Talla 14 (14 años)</option>
+                            </select>
+                            <button class="btn-add-cart" onclick="addToCart('Conjunto Sonic', 75000)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Producto 7 -->
+                    <div class="product-card">
+                        <img src="zFox.png" alt="Conjunto FOX" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Conjunto FOX</h3>
+                            <p class="product-description">
+                                Conjunto infantil de dos piezas en suave algodón 100%. Incluye camiseta de manga corta negra con estampado de FOX y pantalón corto negro con cintura elástica. Fresco y ligero.
+                            </p>
+                            <p class="product-colors"><strong>Colores:</strong> Negro</p>
+                            <p class="product-price">$75,000</p>
+                            <select class="size-selector">
+                                <option value="">Selecciona tu talla</option>
+                                <option value="4">Talla 4 (2 años)</option>
+                                <option value="6">Talla 6 (4 años)</option>
+                                <option value="8">Talla 8 (6 años)</option>
+                                <option value="10">Talla 10 (8 años)</option>
+                                <option value="12">Talla 12 (10 años)</option>
+                                <option value="14">Talla 14 (14 años)</option>
+                            </select>
+                            <button class="btn-add-cart" onclick="addToCart('Conjunto FOX', 75000)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Distrito 21 Kids - Todos los derechos reservados</p>
+        <p>Desarrollado por Nicolas Graterol & Yelitza Jaimes</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
+</body>
+</html>

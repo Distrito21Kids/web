@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Web - Distrito 21 Kids</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 30%, #667eea 70%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .design-container {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 35px;
+            padding: 4rem;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.4);
+        }
+
+        .design-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .design-icon {
+            font-size: 7rem;
+            margin-bottom: 1rem;
+            animation: code 3s ease-in-out infinite;
+        }
+
+        @keyframes code {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(-5deg); }
+            75% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .design-title {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ff6b9d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .design-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .project-info {
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff0f5 100%);
+            padding: 3rem;
+            border-radius: 25px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-info h2 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .project-info p {
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 1rem;
+        }
+
+        .tech-stack {
+            margin: 3rem 0;
+        }
+
+        .tech-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff6b9d;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .tech-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 5px solid #667eea;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+        }
+
+        .tech-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-card h3 {
+            color: #667eea;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .features-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 25px;
+            margin: 3rem 0;
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.4);
+        }
+
+        .features-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-item h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .structure-section {
+            margin: 3rem 0;
+        }
+
+        .structure-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .file-tree {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 2.5rem;
+            border-radius: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.05rem;
+            line-height: 2;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow-x: auto;
+        }
+
+        .file-tree .folder {
+            color: #569cd6;
+            font-weight: bold;
+        }
+
+        .file-tree .file {
+            color: #9cdcfe;
+        }
+
+        .file-tree .comment {
+            color: #6a9955;
+        }
+
+        .developers-section {
+            background: linear-gradient(135deg, #fff0f5 0%, #f8f9ff 100%);
+            padding: 3rem;
+            border-radius: 25px;
+            margin: 3rem 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .developers-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff6b9d;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .developers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .developer-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .developer-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .developer-card h3 {
+            color: #667eea;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .developer-role {
+            color: #ff6b9d;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .developer-description {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .final-message {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 25px;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.4);
+        }
+
+        .final-message h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .final-message p {
+            font-size: 1.2rem;
+            line-height: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .design-container {
+                padding: 2rem;
+            }
+
+            .design-title {
+                font-size: 2.2rem;
+            }
+
+            .tech-grid,
+            .features-grid,
+            .developers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .file-tree {
+                font-size: 0.9rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-fixed">
+        <div class="logo-header">
+            <h1>DISTRITO 21 KIDS</h1>
+            <p>¡Vístete de Diversión!</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="btn-nav btn-home">🏠 Menú Principal</a>
+            <a href="index.html" class="btn-nav">✨ Inicio</a>
+            <a href="disenadores.html" class="btn-nav">👨‍🎨 Diseñadores</a>
+            <a href="catalogo.html" class="btn-nav">🛍️ Catálogo</a>
+        </nav>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+            <div class="design-container">
+                <div class="design-header">
+                    <div class="design-icon">🎨</div>
+                    <h1 class="design-title">Información del Diseño Web</h1>
+                    <p class="design-subtitle">
+                        Conoce los detalles técnicos y creativos detrás del desarrollo de este proyecto web
+                    </p>
+                </div>
+
+                <!-- Información del Proyecto -->
+                <div class="project-info">
+                    <h2>📚 Proyecto Académico</h2>
+                    <p>
+                        Este sitio web fue desarrollado como proyecto de grado para optar al título de <strong>Técnico Informático del Colegio Integrado Camilo Torres de San Vicente de Chucurí</strong>, Santander, Colombia.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        El proyecto representa la culminación de años de aprendizaje en programación web, diseño gráfico y desarrollo de aplicaciones, aplicando conocimientos teóricos y prácticos adquiridos durante la formación técnica.
+                    </p>
+                    <p style="margin-top: 1rem; font-weight: bold; color: #667eea;">
+                        Año: 2025 | Institución: Colegio Integrado Camilo Torres
+                    </p>
+                </div>
+
+                <!-- Stack Tecnológico -->
+                <div class="tech-stack">
+                    <h2 class="tech-title">💻 Tecnologías Utilizadas</h2>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <div class="tech-icon">🌐</div>
+                            <h3>HTML5</h3>
+                            <p>Estructura semántica y accesible del sitio web, utilizando las mejores prácticas de desarrollo frontend.</p>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-icon">🎨</div>
+                            <h3>CSS3</h3>
+                            <p>Estilos modernos con gradientes, animaciones, transiciones y diseño responsive para todos los dispositivos.</p>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-icon">⚡</div>
+                            <h3>JavaScript</h3>
+                            <p>Interactividad dinámica, validación de formularios y funcionalidades avanzadas del carrito de compras.</p>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-icon">📱</div>
+                            <h3>Responsive Design</h3>
+                            <p>Adaptación perfecta a móviles, tablets y computadoras de escritorio con media queries.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Características del Diseño -->
+                <div class="features-section">
+                    <h2 class="features-title">✨ Características del Diseño</h2>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h4>🎯 Navegación Intuitiva</h4>
+                            <p>Sistema de navegación por pestañas separadas para una experiencia de usuario fluida y organizada.</p>
+                        </div>
+
+                        <div class="feature-item">
+                            <h4>🌈 Paleta de Colores</h4>
+                            <p>Combinación vibrante de colores que refleja la alegría y energía de la infancia.</p>
+                        </div>
+
+                        <div class="feature-item">
+                            <h4>💫 Animaciones CSS</h4>
+                            <p>Transiciones suaves y animaciones atractivas que mejoran la experiencia visual.</p>
+                        </div>
+
+                        <div class="feature-item">
+                            <h4>🛒 Sistema de Carrito</h4>
+                            <p>Carrito de compras funcional con contador dinámico y notificaciones en tiempo real.</p>
+                        </div>
+
+                        <div class="feature-item">
+                            <h4>📋 Formularios Validados</h4>
+                            <p>Validación de datos en tiempo real para garantizar información correcta del usuario.</p>
+                        </div>
+
+                        <div class="feature-item">
+                            <h4>🖼️ Galería Interactiva</h4>
+                            <p>Sistema de galería con efectos hover y overlays informativos sobre productos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Estructura de Archivos -->
+                <div class="structure-section">
+                    <h2 class="structure-title">📁 Estructura del Proyecto</h2>
+                    <div class="file-tree">
+<span class="folder">Graterol/</span>
+├── index.html                    <span class="comment">// Página principal con navegación</span>
+├── <span class="folder">css/</span>
+│   └── <span class="file">estilos.css</span>              <span class="comment">// Estilos globales</span>
+├── <span class="folder">js/</span>
+│   └── <span class="file">main.js</span>                  <span class="comment">// JavaScript principal</span>
+├── <span class="folder">images/</span>                      <span class="comment">// Imágenes de productos</span>
+└── <span class="folder">pages/</span>
+    ├── <span class="file">inicio.html</span>              <span class="comment">// Página de bienvenida</span>
+    ├── <span class="file">disenadores.html</span>         <span class="comment">// Equipo creativo</span>
+    ├── <span class="file">mision.html</span>              <span class="comment">// Misión de la empresa</span>
+    ├── <span class="file">vision.html</span>              <span class="comment">// Visión de la empresa</span>
+    ├── <span class="file">historia.html</span>            <span class="comment">// Historia y línea de tiempo</span>
+    ├── <span class="file">catalogo.html</span>            <span class="comment">// Productos con carrito</span>
+    ├── <span class="file">tallas.html</span>              <span class="comment">// Guía de tallas</span>
+    ├── <span class="file">contacto.html</span>            <span class="comment">// Formulario de contacto</span>
+    ├── <span class="file">politicas.html</span>           <span class="comment">// Políticas y términos</span>
+    ├── <span class="file">galeria.html</span>             <span class="comment">// Galería de imágenes</span>
+    ├── <span class="file">testimonios.html</span>         <span class="comment">// Opiniones de clientes</span>
+    └── <span class="file">diseno.html</span>              <span class="comment">// Información del diseño web</span>
+                    </div>
+                </div>
+
+                <!-- Desarrolladores -->
+                <div class="developers-section">
+                    <h2 class="developers-title">👥 Equipo de Desarrollo</h2>
+                    <div class="developers-grid">
+                        <div class="developer-card">
+                             <img src="nicolas.jpg" width="500" height="500"> 
+                            <h3>Nicolas Daniel Graterol Rodríguez</h3>
+                            <p class="developer-role">Desarrollador Full Stack & Diseñador Web</p>
+                            <p class="developer-description">
+                                Responsable de la estructura completa del sitio web, implementación de funcionalidades con HTML5, CSS3 y JavaScript, diseño responsive, sistema de navegación y optimización del código.
+                            </p>
+                        </div>
+
+                        <div class="developer-card">
+                            <img src="fernanda.jpg" width="500" height="500">
+                            <h3>Yelitza Fernanda Jaimes Sandoval</h3>
+                            <p class="developer-role">Diseñadora Gráfica & Editora de Contenido</p>
+                            <p class="developer-description">
+                                Encargada de la identidad visual, paleta de colores, selección de imágenes, diseño de elementos gráficos, contenido textual y experiencia de usuario (UX/UI).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mensaje Final -->
+                <div class="final-message">
+                    <h3>🎓 Mensaje de los Desarrolladores</h3>
+                    <p>
+                        Este proyecto representa no solo el cumplimiento de un requisito académico, sino también nuestra pasión por la tecnología, el diseño y la innovación. Cada línea de código, cada elemento visual y cada funcionalidad fue creada con dedicación y amor por lo que hacemos.
+                    </p>
+                    <p style="margin-top: 1.5rem;">
+                        Agradecemos al <strong>Colegio Integrado Camilo Torres de San Vicente de Chucurí</strong> por brindarnos la formación necesaria para desarrollar este proyecto y por creer en nuestro potencial como futuros profesionales de la tecnología.
+                    </p>
+                    <p style="margin-top: 1.5rem; font-style: italic; font-size: 1.3rem;">
+                        "La tecnología al servicio de la creatividad y el emprendimiento"
+                    </p>
+                    <p style="margin-top: 1rem; font-size: 1.1rem;">
+                        © 2025 - Todos los derechos reservados
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Distrito 21 Kids - Todos los derechos reservados</p>
+        <p>Desarrollado por Nicolas Graterol & Yelitza Jaimes</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
+</body>
+</html>

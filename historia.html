@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia - Distrito 21 Kids</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #2d1b69 0%, #5b247a 50%, #1e3c72 100%);
+            min-height: 100vh;
+        }
+
+        .history-container {
+            background: white;
+            border-radius: 40px;
+            padding: 4rem;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.4);
+        }
+
+        .history-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .history-icon {
+            font-size: 8rem;
+            margin-bottom: 1rem;
+            animation: bookOpen 2s ease-in-out infinite;
+        }
+
+        @keyframes bookOpen {
+            0%, 100% { transform: rotateY(0deg); }
+            50% { transform: rotateY(20deg); }
+        }
+
+        .history-title {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c239b3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .intro-section {
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff0f5 100%);
+            padding: 2.5rem;
+            border-radius: 25px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 2;
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #ff6b9d 0%, #667eea 50%, #764ba2 100%);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ff6b9d 0%, #c239b3 100%);
+            color: white;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+            z-index: 10;
+        }
+
+        .timeline-content h3 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .milestone-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .current-status {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 30px;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4);
+        }
+
+        .current-status h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .current-status p {
+            font-size: 1.3rem;
+            line-height: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+            }
+
+            .timeline-content {
+                width: 100%;
+                margin: 0 0 0 60px !important;
+            }
+
+            .timeline-year {
+                left: 30px;
+            }
+
+            .history-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-fixed">
+        <div class="logo-header">
+            <h1>DISTRITO 21 KIDS</h1>
+            <p>¡Vístete de Diversión!</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="btn-nav btn-home">🏠 Menú Principal</a>
+            <a href="index.html" class="btn-nav">🎯 Misión</a>
+            <a href="vision.html" class="btn-nav">🌈 Visión</a>
+            <a href="catalogo.html" class="btn-nav">🛍️ Catálogo</a>
+        </nav>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+            <div class="history-container">
+                <div class="history-header">
+                    <div class="history-icon">📖</div>
+                    <h1 class="history-title">Reseña Histórica</h1>
+                </div>
+
+                <div class="intro-section">
+                    <p class="intro-text">
+                        <strong>Distrito 21 Kids</strong> nació en el año <strong>2025</strong> como un pequeño sueño familiar. Inspirados por la energía y creatividad de los niños, decidimos crear una marca que ofreciera ropa cómoda, moderna y segura, capaz de acompañarlos en todas sus aventuras.
+                    </p>
+                    <p class="intro-text" style="margin-top: 1rem;">
+                        Todo comenzó en un pequeño taller, donde las primeras prendas fueron diseñadas con dedicación y entusiasmo. Poco a poco, gracias a la confianza de nuestros clientes, <strong>Distrito 21 Kids</strong> fue creciendo y ampliando su catálogo.
+                    </p>
+                </div>
+
+                <h2 style="text-align: center; font-size: 2.5rem; color: #667eea; margin-bottom: 3rem;">
+                    ⏳ Línea del Tiempo
+                </h2>
+
+                <div class="timeline">
+                    <!-- 2021 -->
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-content">
+                            <div class="milestone-icon">💡</div>
+                            <h3>Nace la Idea</h3>
+                            <p>
+                                Un sueño familiar toma forma: crear una marca de ropa infantil que combine calidad, diseño y amor por los detalles. Las primeras ideas se plasman en papel y comienza la investigación del mercado.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2022 -->
+                    <div class="timeline-item">
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-content">
+                            <div class="milestone-icon">👕</div>
+                            <h3>Primeras Colecciones</h3>
+                            <p>
+                                Se lanzan las primeras líneas de productos. Los diseños iniciales reciben una excelente acogida entre las familias de la región, motivándonos a seguir creciendo y mejorando.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2023 -->
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-content">
+                            <div class="milestone-icon">💻</div>
+                            <h3>Expansión Digital</h3>
+                            <p>
+                                Apertura de nuestra tienda en línea y presencia en redes sociales. Distrito 21 Kids se moderniza y amplía su alcance, llegando a más familias en todo el país.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2025 -->
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">
+                            <div class="milestone-icon">🏆</div>
+                            <h3>Marca Consolidada</h3>
+                            <p>
+                                Distrito 21 Kids se consolida como referente en moda infantil, con un catálogo amplio, clientes satisfechos y un equipo comprometido con la excelencia y la innovación constante.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="current-status">
+                    <h3>🌟 Hoy en Día</h3>
+                    <p>
+                        Nuestras colecciones reflejan años de trabajo, amor y aprendizaje. Cada pieza cuenta una historia y cada cliente es parte de nuestra familia. Más que una marca, <strong>Distrito 21 Kids</strong> representa el espíritu alegre, activo y soñador de los niños que nos inspiran cada día. 😊💕
+                    </p>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-number">4+</div>
+                            <div class="stat-label">Años de Experiencia</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Diseños Únicos</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Clientes Felices</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">⭐⭐⭐⭐⭐</div>
+                            <div class="stat-label">Calificación</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Distrito 21 Kids - Todos los derechos reservados</p>
+        <p>Desarrollado por Nicolas Graterol & Yelitza Jaimes</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
+</body>
+</html>

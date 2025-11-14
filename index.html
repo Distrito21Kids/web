@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Distrito 21 Kids</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c239b3 50%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            animation: slideDown 0.8s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-text {
+            font-size: 1.3rem;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            line-height: 1.9;
+            animation: slideUp 1s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .highlight {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.5rem;
+            display: block;
+            margin: 2rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c239b3 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-text {
+                font-size: 1.1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-fixed">
+        <div class="logo-header">
+            <h1>DISTRITO 21 KIDS</h1>
+            <p>¡Vístete de Diversión!</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html".html" class="btn-nav btn-home">🏠 Menú Principal</a>
+            <a href="disenadores.html" class="btn-nav">👨‍🎨 Diseñadores</a>
+            <a href="catalogo.html" class="btn-nav">🛍️ Catálogo</a>
+            <a href="contacto.html" class="btn-nav">📞 Contacto</a>
+        </nav>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+            <div class="hero-section">
+                <h1 class="hero-title">✨ Bienvenidos a Distrito 21 Kids ✨</h1>
+                
+                <p class="hero-text">
+                    ¡Donde la moda infantil cobra vida! Somos una marca dedicada a crear ropa para niños moderna, cómoda y llena de color. Nuestras prendas están pensadas para acompañar a los pequeños en sus aventuras diarias, combinando estilo, confort y durabilidad.
+                </p>
+
+                <span class="highlight">Explora. Juega. Sonríe.</span>
+                <p class="hero-text" style="font-size: 1.1rem;">
+                    Porque vestir bien también es parte de crecer.
+                </p>
+
+                <a href="catalogo.html" class="cta-button">Ver Catálogo Completo</a>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">👕</div>
+                        <h3>Calidad Premium</h3>
+                        <p>Materiales 100% algodón, suaves y duraderos para la piel delicada de los niños.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Diseños Únicos</h3>
+                        <p>Estampados modernos y coloridos que reflejan la energía de la infancia.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">😊</div>
+                        <h3>Comodidad Total</h3>
+                        <p>Prendas pensadas para el movimiento, el juego y la diversión sin límites.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">⭐</div>
+                        <h3>Mejores Precios</h3>
+                        <p>Calidad excepcional a precios accesibles para todas las familias.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Distrito 21 Kids - Todos los derechos reservados</p>
+        <p>Desarrollado por Nicolas Graterol & Yelitza Jaimes</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
+</body>
+</html>

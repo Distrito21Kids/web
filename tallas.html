@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Tallas - Distrito 21 Kids</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #667eea 100%);
+            min-height: 100vh;
+        }
+
+        .sizes-container {
+            background: white;
+            border-radius: 35px;
+            padding: 4rem;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3);
+        }
+
+        .sizes-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .sizes-icon {
+            font-size: 7rem;
+            margin-bottom: 1rem;
+            animation: measure 2s ease-in-out infinite;
+        }
+
+        @keyframes measure {
+            0%, 100% { transform: scaleX(1); }
+            50% { transform: scaleX(1.2); }
+        }
+
+        .sizes-title {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #f093fb 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .sizes-intro {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .category-section {
+            margin: 3rem 0;
+        }
+
+        .category-header {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            margin-bottom: 3rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 1.3rem;
+            text-align: center;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff0f5 100%);
+            transform: scale(1.02);
+        }
+
+        tbody tr:nth-child(odd) {
+            background: #fafafa;
+        }
+
+        tbody tr:nth-child(odd):hover {
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff0f5 100%);
+        }
+
+        .size-tips {
+            background: linear-gradient(135deg, #fff0f5 0%, #f8f9ff 100%);
+            padding: 3rem;
+            border-radius: 25px;
+            margin: 3rem 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .size-tips h3 {
+            color: #ff6b9d;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .tip-icon {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .tip-card h4 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .tip-card p {
+            color: #666;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .measurement-guide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 25px;
+            margin: 3rem 0;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.4);
+        }
+
+        .measurement-guide h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .measurement-guide p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .measurement-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .step-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .step-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .sizes-container {
+                padding: 2rem;
+            }
+
+            .sizes-title {
+                font-size: 2.2rem;
+            }
+
+            .table-container {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 0.8rem 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .tips-grid,
+            .measurement-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-fixed">
+        <div class="logo-header">
+            <h1>DISTRITO 21 KIDS</h1>
+            <p>¡Vístete de Diversión!</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="btn-nav btn-home">🏠 Menú Principal</a>
+            <a href="index.html" class="btn-nav">✨ Inicio</a>
+            <a href="catalogo.html" class="btn-nav">🛍️ Catálogo</a>
+            <a href="contacto.html" class="btn-nav">📞 Contacto</a>
+        </nav>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+            <div class="sizes-container">
+                <div class="sizes-header">
+                    <div class="sizes-icon">📏</div>
+                    <h1 class="sizes-title">Guía de Tallas</h1>
+                    <p class="sizes-intro">
+                        Encuentra la talla perfecta para tu pequeño. Nuestras tablas te ayudarán a elegir la medida ideal para garantizar la máxima comodidad.
+                    </p>
+                </div>
+
+                <!-- Tabla de Camisetas -->
+                <div class="category-section">
+                    <h2 class="category-header">👕 Camisetas</h2>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>TALLA</th>
+                                    <th>PECHO (cm)</th>
+                                    <th>CINTURA (cm)</th>
+                                    <th>EDAD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>4</strong></td>
+                                    <td>57-67</td>
+                                    <td>51-61</td>
+                                    <td>2 Años</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>6</strong></td>
+                                    <td>61-71</td>
+                                    <td>55-65</td>
+                                    <td>4 Años</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>8</strong></td>
+                                    <td>64-74</td>
+                                    <td>59-69</td>
+                                    <td>6 Años</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>10</strong></td>
+                                    <td>68-78</td>
+                                    <td>63-73</td>
+                                    <td>8 Años</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>12</strong></td>
+                                    <td>74-84</td>
+                                    <td>69-79</td>
+                                    <td>10 Años</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>14</strong></td>
+                                    <td>78-88</td>
+                                    <td>73-83</td>
+                                    <td>14 Años</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tabla de Pantalones -->
+                <div class="category-section">
+                    <h2 class="category-header" style="color: #ff6b9d;">👖 Pantalones</h2>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>TALLA</th>
+                                    <th>CINTURA (cm)</th>
+                                    <th>CADERA (cm)</th>
+                                    <th>EDAD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>4</strong></td>
+                                    <td>51-61</td>
+                                    <td>60-70</td>
+                                    <td>2 Años</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>6</strong></td>
+                                    <td>55-65</td>
+                                    <td>64-74</td>
+                                    <td>4 Años</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>8</strong></td>
+                                    <td>59-69</td>
+                                    <td>68-78</td>
+                                    <td>6 Años</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>10</strong></td>
+                                    <td>63-73</td>
+                                    <td>72-82</td>
+                                    <td>8 Años</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>12</strong></td>
+                                    <td>67-77</td>
+                                    <td>76-86</td>
+                                    <td>10 Años</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>14</strong></td>
+                                    <td>73-83</td>
+                                    <td>82-92</td>
+                                    <td>14 Años</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Consejos de Talla -->
+                <div class="size-tips">
+                    <h3>💡 Consejos para Elegir la Talla Correcta</h3>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <div class="tip-icon">📐</div>
+                            <h4>Mide Correctamente</h4>
+                            <p>Usa una cinta métrica flexible y toma las medidas con el niño en ropa interior para mayor precisión.</p>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-icon">👶</div>
+                            <h4>Considera el Crecimiento</h4>
+                            <p>Los niños crecen rápido. Si está entre dos tallas, te recomendamos elegir la mayor.</p>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-icon">🎯</div>
+                            <h4>Verifica la Edad</h4>
+                            <p>La edad es una referencia, pero cada niño es diferente. Prioriza siempre las medidas reales.</p>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-icon">💬</div>
+                            <h4>Pregunta si Tienes Dudas</h4>
+                            <p>Nuestro equipo está listo para ayudarte a elegir la talla perfecta. ¡Contáctanos!</p>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-icon">👕</div>
+                            <h4>Prueba la Ropa</h4>
+                            <p>Si es posible, prueba las prendas antes de comprar para garantizar el ajuste perfecto.</p>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-icon">🔄</div>
+                            <h4>Cambios Disponibles</h4>
+                            <p>Si la talla no es la correcta, ofrecemos cambios dentro de los 7 días posteriores a la compra.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guía de Medición -->
+                <div class="measurement-guide">
+                    <h3>📏 ¿Cómo Tomar las Medidas?</h3>
+                    <p>Sigue estos sencillos pasos para obtener las medidas correctas de tu pequeño:</p>
+
+                    <div class="measurement-steps">
+                        <div class="step-box">
+                            <div class="step-number">1</div>
+                            <h4>Pecho</h4>
+                            <p>Mide alrededor de la parte más ancha del pecho, pasando la cinta por debajo de las axilas.</p>
+                        </div>
+
+                        <div class="step-box">
+                            <div class="step-number">2</div>
+                            <h4>Cintura</h4>
+                            <p>Mide alrededor de la parte más estrecha de la cintura, generalmente a la altura del ombligo.</p>
+                        </div>
+
+                        <div class="step-box">
+                            <div class="step-number">3</div>
+                            <h4>Cadera</h4>
+                            <p>Mide alrededor de la parte más ancha de las caderas, manteniendo la cinta paralela al suelo.</p>
+                        </div>
+
+                        <div class="step-box">
+                            <div class="step-number">4</div>
+                            <h4>Altura</h4>
+                            <p>Mide desde la parte superior de la cabeza hasta el suelo, con el niño descalzo y de pie.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Distrito 21 Kids - Todos los derechos reservados</p>
+        <p>Desarrollado por Nicolas Graterol & Yelitza Jaimes</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
+</body>
+</html>

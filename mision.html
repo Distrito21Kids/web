@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misión - Distrito 21 Kids</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <style>
+        body {
+            background: radial-gradient(circle at top right, #ff6b9d 0%, #c239b3 50%, #667eea 100%);
+            min-height: 100vh;
+        }
+
+        .mission-container {
+            background: white;
+            border-radius: 35px;
+            padding: 4rem;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .mission-title {
+            text-align: center;
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c239b3 50%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 3rem;
+            font-weight: 900;
+            animation: slideIn 0.8s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .mission-icon {
+            text-align: center;
+            font-size: 8rem;
+            margin-bottom: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .mission-content {
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff0f5 100%);
+            border-radius: 25px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .mission-text {
+            font-size: 1.3rem;
+            color: #333;
+            line-height: 2;
+            text-align: justify;
+            margin-bottom: 2rem;
+        }
+
+        .mission-text strong {
+            color: #667eea;
+            font-weight: 900;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+        }
+
+        .value-card:hover {
+            transform: translateY(-15px) rotate(2deg);
+            border-color: #ff6b9d;
+            box-shadow: 0 20px 50px rgba(255, 107, 157, 0.3);
+        }
+
+        .value-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 25px;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .quote-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .quote-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .mission-container {
+                padding: 2rem;
+            }
+
+            .mission-title {
+                font-size: 2.2rem;
+            }
+
+            .mission-icon {
+                font-size: 5rem;
+            }
+
+            .mission-text {
+                font-size: 1.1rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-fixed">
+        <div class="logo-header">
+            <h1>DISTRITO 21 KIDS</h1>
+            <p>¡Vístete de Diversión!</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html".html" class="btn-nav btn-home">🏠 Menú Principal</a>
+            <a href="index.html" class="btn-nav">✨ Inicio</a>
+            <a href="vision.html" class="btn-nav">🌈 Visión</a>
+            <a href="historia.html" class="btn-nav">📖 Historia</a>
+        </nav>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+            <div class="mission-container">
+                <div class="content-wrapper">
+                    <div class="mission-icon">🎯</div>
+                    <h1 class="mission-title">Nuestra Misión</h1>
+
+                    <div class="mission-content">
+                        <p class="mission-text">
+                            La misión de <strong>Distrito 21 Kids</strong> es crear ropa infantil que combine diseño, comodidad y amor por los detalles, ofreciendo a cada niño la oportunidad de expresarse con libertad y estilo. Buscamos que cada prenda transmita alegría, libertad y confianza, acompañando a los niños en sus juegos, risas y descubrimientos.
+                        </p>
+
+                        <p class="mission-text">
+                            Cada diseño es creado pensando en los padres que valoran la durabilidad y en los pequeños que disfrutan verse bien sin perder comodidad. En <strong>Distrito 21 Kids</strong>, vestir bien es sinónimo de sentirse feliz. 💕👚
+                        </p>
+                    </div>
+
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">❤️</div>
+                            <h3>Amor por el Detalle</h3>
+                            <p>Cada prenda es diseñada con dedicación y cuidado para garantizar la mejor experiencia.</p>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-icon">✨</div>
+                            <h3>Calidad Superior</h3>
+                            <p>Utilizamos materiales premium que garantizan durabilidad y comodidad en cada uso.</p>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-icon">🌟</div>
+                            <h3>Innovación</h3>
+                            <p>Diseños modernos que capturan las tendencias actuales de la moda infantil.</p>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-icon">🎨</div>
+                            <h3>Creatividad</h3>
+                            <p>Estampados únicos y coloridos que reflejan la energía de la infancia.</p>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-icon">🤝</div>
+                            <h3>Compromiso</h3>
+                            <p>Nos comprometemos con cada familia ofreciendo productos que superan expectativas.</p>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-icon">😊</div>
+                            <h3>Felicidad</h3>
+                            <p>Nuestro objetivo es que cada niño se sienta feliz y confiado al usar nuestras prendas.</p>
+                        </div>
+                    </div>
+
+                    <div class="quote-section">
+                        <h3>💫 Nuestro Compromiso</h3>
+                        <p>
+                            "Creemos que la infancia es la etapa más hermosa de la vida, y queremos ser parte de esos momentos especiales vistiendo a los niños con prendas que les permitan ser ellos mismos: libres, felices y llenos de energía."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Distrito 21 Kids - Todos los derechos reservados</p>
+        <p>Desarrollado por Nicolas Graterol & Yelitza Jaimes</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
+</body>
+</html>

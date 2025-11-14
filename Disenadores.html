@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseñadores - Distrito 21 Kids</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            min-height: 100vh;
+        }
+
+        .team-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c239b3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            font-weight: 900;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .designers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .designer-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 25px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.4);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .designer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c239b3 100%);
+            z-index: 0;
+        }
+
+        .designer-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 70px rgba(102, 126, 234, 0.5);
+        }
+
+        .designer-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: white;
+            margin: 2rem auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .designer-content {
+            background: white;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .designer-content h3 {
+            color: #667eea;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .designer-role {
+            color: #ff6b9d;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .designer-description {
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+            font-size: 1.05rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+
+        .skill-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .project-info {
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff0f5 100%);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-info h3 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-info p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .designers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-fixed">
+        <div class="logo-header">
+            <h1>DISTRITO 21 KIDS</h1>
+            <p>¡Vístete de Diversión!</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="btn-nav btn-home">🏠 Menú Principal</a>
+            <a href="index.html" class="btn-nav">✨ Inicio</a>
+            <a href="mision.html" class="btn-nav">🎯 Misión</a>
+            <a href="catalogo.html" class="btn-nav">🛍️ Catálogo</a>
+        </nav>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+            <div class="team-container">
+                <h1 class="section-title">👨‍🎨 Nuestro Equipo Creativo</h1>
+                
+                <p class="intro-text">
+                    Detrás de cada prenda hay talento, dedicación y amor por el detalle. Este proyecto fue desarrollado por un equipo comprometido con la excelencia y la innovación.
+                </p>
+
+                <div class="designers-grid">
+                    <!-- Diseñador 1 -->
+                    <div class="designer-card">
+                        <img src="nicolas.jpg" width="500" height="500"> 
+                        <div class="designer-content">
+                            <h3>Nicolas Daniel Graterol Rodríguez</h3>
+                            <span class="designer-role">Diseñador, Programador y Encargado de la Estructura Web</span>
+                            <p class="designer-description">
+                                Apasionado por la tecnología y el desarrollo digital, se encarga de dar vida al entorno virtual de Distrito 21 Kids, garantizando que la experiencia de nuestros clientes sea moderna, segura y fácil de usar. Con habilidades avanzadas en programación web, Nicolas construye interfaces intuitivas y funcionales que conectan a las familias con nuestros productos.
+                            </p>
+                            <div class="skills-list">
+                                <span class="skill-badge">HTML5</span>
+                                <span class="skill-badge">CSS3</span>
+                                <span class="skill-badge">JavaScript</span>
+                                <span class="skill-badge">Diseño Web</span>
+                                <span class="skill-badge">UX/UI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diseñador 2 -->
+                    <div class="designer-card">
+                        <img src="fernanda.jpg" width="700" height="">
+                        <div class="designer-content">
+                            <h3>Yelitza Fernanda Jaimes Sandoval</h3>
+                            <span class="designer-role">Diseñadora Gráfica y Editora de Contenido Visual</span>
+                            <p class="designer-description">
+                                Responsable de la identidad visual de la marca, combina colores, formas y creatividad para reflejar la esencia divertida y dinámica que caracteriza a nuestra línea de ropa infantil. Yelitza transforma ideas en diseños vibrantes que capturan la alegría de la infancia, cuidando cada detalle estético del proyecto.
+                            </p>
+                            <div class="skills-list">
+                                <span class="skill-badge">Diseño Gráfico</span>
+                                <span class="skill-badge">Edición Visual</span>
+                                <span class="skill-badge">Branding</span>
+                                <span class="skill-badge">Ilustración</span>
+                                <span class="skill-badge">Marketing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <h3>📚 Proyecto Académico</h3>
+                    <p>
+                       Este proyecto académico fue desarrollado como requisito para optar al título de Bachiller Técnico en Informática del Colegio Integrado Camilo Torres.
+Su elaboración forma parte del proceso de formación integral que promueve la institución, orientado al desarrollo de competencias técnicas, investigativas y éticas en el campo de la informática.</strong>.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        ©️ Colegio Integrado Camilo Torres. Todos los derechos reservados. – 2025
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Distrito 21 Kids - Todos los derechos reservados</p>
+        <p>Desarrollado por Nicolas Graterol & Yelitza Jaimes</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
